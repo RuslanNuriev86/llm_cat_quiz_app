@@ -1,3 +1,4 @@
+![Alt text](/cat.png)
 # Pixel Cat LLM Quiz App  
 
 ## Overview 
