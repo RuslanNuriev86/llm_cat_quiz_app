@@ -1,0 +1,142 @@
+[ 
+    {
+        "question": "Which of the following best describes the idea behind self-attention mechanism?",
+        "options": [
+            "Each token attends to all other tokens in the sequence to compute a contextual representation.",
+            "A mechanism where the model uses hard-coded attention to predefined keywords.",
+            "A technique where only the first and last tokens of a sequence influence the output.",
+            "A filtering process that removes redundant tokens before prediction."
+        ],
+        "answer": "Each token attends to all other tokens in the sequence to compute a contextual representation."
+    },
+    {
+        "question": "What is the main goal of using cross-attention mechanism in large language models?",
+        "options": [
+            "To allow the decoder to focus on relevant parts of the encoder’s outputs.",
+            "To improve memory usage by pruning unimportant tokens.",
+            "To make tokens within a single sequence attend only to themselves.",
+            "To merge multiple token sequences into one unified vector."
+        ],
+        "answer": "To allow the decoder to focus on relevant parts of the encoder’s outputs."
+    },
+    {
+        "question": "What is the role of Q (query), K (key), and V (value) vectors in the self-attention mechanism?",
+        "options": [
+            "They define how each token attends to others by computing attention weights and combining values.",
+            "They are static embeddings assigned before training.",
+            "They store gradients for updating model parameters.",
+            "They represent token frequency statistics in the training data."
+        ],
+        "answer": "They define how each token attends to others by computing attention weights and combining values."
+    },
+    {
+        "question": "How are input embeddings different from attention output vectors in a transformer model?",
+        "options": [
+            "Input embeddings are static representations of tokens, while attention outputs are dynamic and context-aware.",
+            "Attention vectors are used only during training, not inference.",
+            "Input embeddings are derived from model weights, while attention outputs come from user input.",
+            "They are the same, just reshaped for computation."
+        ],
+        "answer": "Input embeddings are static representations of tokens, while attention outputs are dynamic and context-aware."
+    },
+    {
+        "question": "How is computation parallelized during training and inference in transformer models?",
+        "options": [
+            "Training is parallelized over tokens and attention heads, while inference uses KV caching for token-wise generation.",
+            "Both training and inference operate strictly in a single-threaded fashion.",
+            "Inference parallelizes by batching multiple models at once.",
+            "Training is done sequentially to preserve token order."
+        ],
+        "answer": "Training is parallelized over tokens and attention heads, while inference uses KV caching for token-wise generation."
+    },
+    {
+        "question": "What is the main purpose of Layer Normalization in transformers?",
+        "options": [
+            "To stabilize training by keeping activations within a consistent scale.",
+            "To reduce the number of tokens by eliminating outliers.",
+            "To reorder sequence elements before attention.",
+            "To quantize weights for compression."
+        ],
+        "answer": "To stabilize training by keeping activations within a consistent scale."
+    },
+    {
+        "question": "Why are residual connections used in transformer architectures?",
+        "options": [
+            "To preserve input information and allow gradients to flow more easily during backpropagation.",
+            "To skip training for certain layers entirely.",
+            "To normalize the output sequence lengths.",
+            "To mask out padding tokens automatically."
+        ],
+        "answer": "To preserve input information and allow gradients to flow more easily during backpropagation."
+    },
+    {
+        "question": "What does the temperature parameter control in the softmax function during text generation?",
+        "options": [
+            "It adjusts the randomness of token selection by scaling logits before softmax.",
+            "It controls the learning rate of the optimizer.",
+            "It sets the number of attention heads.",
+            "It regulates how many layers to use in inference."
+        ],
+        "answer": "It adjusts the randomness of token selection by scaling logits before softmax."
+    },
+    {
+        "question": "What happens if the temperature in softmax is set to zero during generation?",
+        "options": [
+            "The model picks the highest-probability token deterministically (argmax).",
+            "It produces a runtime division-by-zero error.",
+            "It results in fully random token sampling.",
+            "It disables the model’s ability to predict next tokens."
+        ],
+        "answer": "The model picks the highest-probability token deterministically (argmax)."
+    },
+    {
+        "question": "What does the perplexity metric evaluate in language models?",
+        "options": [
+            "How well a model predicts the next token, with lower values indicating better performance.",
+            "The diversity of token outputs in sampling.",
+            "The runtime speed of inference.",
+            "The number of tokens the model can attend to at once."
+        ],
+        "answer": "How well a model predicts the next token, with lower values indicating better performance."
+    },
+    {
+        "question": "Why is perplexity a differentiable metric during training?",
+        "options": [
+            "It is derived from the log-likelihood loss, which is differentiable with respect to model parameters.",
+            "It is computed from gradients during backpropagation.",
+            "It uses hard argmax operations that are differentiable.",
+            "It depends on token frequency alone and not model weights."
+        ],
+        "answer": "It is derived from the log-likelihood loss, which is differentiable with respect to model parameters."
+    },
+    {
+        "question": "What do scaling laws describe in the context of large language models?",
+        "options": [
+            "How performance improves predictably with increases in data, model size, and compute.",
+            "How weights are scaled down during quantization.",
+            "How models reduce floating point precision dynamically.",
+            "How output sequences are padded to uniform length."
+        ],
+        "answer": "How performance improves predictably with increases in data, model size, and compute."
+    },
+    {
+        "question": "How does parameter quantization help with deploying large language models efficiently?",
+        "options": [
+            "It reduces the precision of weights to save memory and speed up inference.",
+            "It increases the precision of weights to improve output accuracy.",
+            "It compresses token embeddings into binary for lossless storage.",
+            "It shifts weights into frequency space for easier analysis."
+        ],
+        "answer": "It reduces the precision of weights to save memory and speed up inference."
+    },
+    {
+        "question": "Why is the KV cache important for efficient transformer inference?",
+        "options": [
+            "It stores key and value tensors from previous tokens to avoid recomputation.",
+            "It saves training gradients to reuse across epochs.",
+            "It accumulates optimizer states for adaptive learning.",
+            "It caches entire input sequences to reduce memory use."
+        ],
+        "answer": "It stores key and value tensors from previous tokens to avoid recomputation."
+    }
+]
