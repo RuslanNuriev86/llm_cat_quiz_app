@@ -138,5 +138,135 @@
             "It caches entire input sequences to reduce memory use."
         ],
         "answer": "It stores key and value tensors from previous tokens to avoid recomputation."
+    },
+    {
+        "question": "Where in a Transformer architecture are Mixture of Experts (MoE) layers most commonly applied?",
+        "options": [
+            "In the attention heads to allow experts to specialize on token relationships.",
+            "In the input embedding layer to encode domain-specific vocabularies.",
+            "In the feed-forward network layers to selectively activate different expert MLPs.",
+            "In the output layer to rank expert completions."
+        ],
+        "answer": "In the feed-forward network layers to selectively activate different expert MLPs."
+    },
+    {
+        "question": "What is a key benefit of using Mixture of Experts in Transformer models?",
+        "options": [
+            "It makes models smaller by pruning attention heads.",
+            "It increases performance by reusing positional encodings.",
+            "It allows models to scale with more parameters while keeping inference compute constant.",
+            "It replaces tokenization with expert-based segmentation."
+        ],
+        "answer": "It allows models to scale with more parameters while keeping inference compute constant."
+    },
+    {
+        "question": "Why do large language models typically train for only one epoch over massive datasets?",
+        "options": [
+            "Because the dataset is extremely clean and well-curated.",
+            "Training for more than one epoch usually leads to catastrophic forgetting.",
+            "The dataset is so large that just one pass is sufficient to generalize well.",
+            "Because GPUs can only handle one epoch before memory resets."
+        ],
+        "answer": "The dataset is so large that just one pass is sufficient to generalize well."
+    },
+    {
+        "question": "What does rejection sampling aim to achieve in the context of LLM inference?",
+        "options": [
+            "It removes harmful tokens from training data.",
+            "It scores multiple candidate outputs and selects the best according to a reward model.",
+            "It samples only from high-frequency tokens to reduce noise.",
+            "It penalizes repeated n-grams during generation."
+        ],
+        "answer": "It scores multiple candidate outputs and selects the best according to a reward model."
+    },
+    {
+        "question": "What is the purpose of rejection sampling in LLM alignment?",
+        "options": [
+            "To prune out low-likelihood tokens during beam search.",
+            "To train the model on only the rejected completions.",
+            "To select the best response from multiple generated outputs using a reward model.",
+            "To inject randomness into training for better generalization."
+        ],
+        "answer": "To select the best response from multiple generated outputs using a reward model."
+    },
+    {
+        "question": "During RLHF, when can rejection sampling outputs be used for training?",
+        "options": [
+            "Only during supervised fine-tuning.",
+            "Never — rejection sampling is only for inference.",
+            "To construct a preference dataset or train a reward model for PPO.",
+            "Only after converting them into embeddings."
+        ],
+        "answer": "To construct a preference dataset or train a reward model for PPO."
+    },
+    {
+        "question": "In DPO (Direct Preference Optimization), why is the model trained on the difference between log-probs of chosen vs rejected completions?",
+        "options": [
+            "Because the rejected completion provides a stronger gradient signal.",
+            "Because it allows the model to minimize variance in the output length.",
+            "Because human feedback only gives us relative preferences, not ground-truth answers.",
+            "Because it simulates a binary classification task between correct and incorrect tokens."
+        ],
+        "answer": "Because human feedback only gives us relative preferences, not ground-truth answers."
+    },
+    {
+        "question": "How does PPO give fine-grained control over a language model's behavior?",
+        "options": [
+            "By directly maximizing the log-probability of preferred responses.",
+            "By using a reward model that can encode multiple objectives like safety, helpfulness, and conciseness.",
+            "By randomly sampling experts and penalizing long outputs.",
+            "By freezing the attention weights and only tuning the output head."
+        ],
+        "answer": "By using a reward model that can encode multiple objectives like safety, helpfulness, and conciseness."
+    },
+    {
+        "question": "What makes DPO more sample-efficient and simpler than PPO?",
+        "options": [
+            "It only requires unlabeled text data and no model training.",
+            "It doesn’t need a reward model or reinforcement learning infrastructure.",
+            "It uses precomputed reward values to fine-tune logits.",
+            "It can be applied before the supervised fine-tuning stage."
+        ],
+        "answer": "It doesn’t need a reward model or reinforcement learning infrastructure."
+    },
+    {
+        "question": "How can you simulate multi-objective behavior in DPO if you can't use a reward function?",
+        "options": [
+            "By encoding objectives as special tokens in the prompt.",
+            "By instructing annotators to consistently favor one type of behavior over another when ranking responses.",
+            "By applying temperature scaling to all rejected responses.",
+            "By generating responses from multiple models and averaging their logits."
+        ],
+        "answer": "By instructing annotators to consistently favor one type of behavior over another when ranking responses."
+    },
+    {
+        "question": "Which of the following best summarizes the difference between PPO and DPO?",
+        "options": [
+            "PPO requires human preferences; DPO doesn't.",
+            "PPO is used only at inference time; DPO is used for training.",
+            "PPO learns from reward scores; DPO learns directly from pairwise preferences.",
+            "PPO works only for small models; DPO is for large models only."
+        ],
+        "answer": "PPO learns from reward scores; DPO learns directly from pairwise preferences."
+    },
+    {
+        "question": "What is the main idea behind Direct Preference Optimization (DPO)?",
+        "options": [
+            "Using reinforcement learning to maximize rewards from a preference model.",
+            "Using a reward model to choose between completions.",
+            "Using a logistic loss to directly increase the probability of preferred completions over rejected ones.",
+            "Using contrastive learning to minimize token-level entropy."
+        ],
+        "answer": "Using a logistic loss to directly increase the probability of preferred completions over rejected ones."
+    },
+    {
+        "question": "What is a limitation of DPO compared to PPO?",
+        "options": [
+            "DPO cannot scale to large datasets.",
+            "DPO can’t incorporate external signals like code correctness or response latency.",
+            "DPO requires complex distributed infrastructure.",
+            "DPO fine-tunes embeddings only, not full model weights."
+        ],
+        "answer": "DPO can’t incorporate external signals like code correctness or response latency."
     }
 ]
